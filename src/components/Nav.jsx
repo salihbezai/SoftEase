@@ -8,8 +8,12 @@ const Nav = () => {
   const [ isOpen, setIsOpen ] = useState(false);
 
   const toggleSideBar=()=>{
-    setIsOpen(!isOpen)
-    document.body.style.overflow = isOpen ? "auto" : "hidden"; 
+    setIsOpen(prev=>{
+      const newState = !prev;
+      document.body.style.overflow = newState  ? "hidden" :"auto"; 
+      return newState
+    })
+   
   }
 
 
@@ -39,7 +43,7 @@ const Nav = () => {
           <img src={hamburger} alt="hamburger" width={25} height={25} onClick={toggleSideBar} />
           </div>
           
-          <SideBar isOpen={isOpen} setIsOpen={setIsOpen}  />
+          <SideBar isOpen={isOpen} setIsOpen={setIsOpen}   />
         </nav>
     </header>
   )

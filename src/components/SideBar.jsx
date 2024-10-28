@@ -13,13 +13,18 @@ const SideBar = ({ isOpen, setIsOpen }) => {
         
     }, [isOpen])
     
+    const closeSideBar=()=>{
+        setIsOpen(false);
+        document.body.style.overflow ="auto"; 
+    }
+    
   return (
     <div className={`px-8 py-6 bg-white   z-30 shadow-lg  fixed top-0 right-0 min-h-screen ${isOpen ? 'block' : 'hidden'} lg:hidden`}>
         <div className='flex justify-between items-center w-80'>
             <a href="/">
             <img src={headerLogo} alt="Logo" width={130} height={29} className='cursor-pointer' />
             </a>
-            <img src={closeIcon} onClick={()=>setIsOpen(false)} alt="sdfsd" width={'50px'} height={"50px"} className='cursor-pointer' />
+            <img src={closeIcon} onClick={closeSideBar} alt="sdfsd" width={'50px'} height={"50px"} className='cursor-pointer' />
         </div>
         <hr />
         <ul className='flex flex-col'>

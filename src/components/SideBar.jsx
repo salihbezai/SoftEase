@@ -34,7 +34,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
     }, []);
 
     return (
-        <div className={`px-8 py-6 bg-white z-30 shadow-lg fixed top-0 right-0 min-h-screen transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}>
+        <div className={`px-8 py-6 bg-white z-30 shadow-lg fixed top-0 right-0 min-h-screen transition-transform duration-500 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'} lg:hidden`}>
             <div className='flex justify-between items-center w-80'>
                 <a href="/">
                     <img src={headerLogo} alt="Logo" width={130} height={29} className='cursor-pointer' />
@@ -45,7 +45,7 @@ const SideBar = ({ isOpen, setIsOpen }) => {
             <ul className='flex flex-col'>
                 {
                     navLinks.map((navlink, key) => (
-                        <li key={key} className='flex-1 p-4 text-slate-gray '>
+                        <li key={key} className='flex-1 p-4 text-slate-gray hover:text-coral-red text-xl '>
                             <a href={navlink.href}>{navlink.label}</a>
                         </li>
                     ))
